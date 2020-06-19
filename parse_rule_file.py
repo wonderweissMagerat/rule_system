@@ -55,7 +55,6 @@ class rule_parser:
 
                     cur.add(word)
             concept[name] = cur
-        print('concept: '+str(concept))
         return concept
 
     def parse_rules(self,path):
@@ -91,8 +90,6 @@ class rule_parser:
                             self.atomic_op.add(item)
             cur.append(')')
             rules[name] = cur
-        print(rules)
-        print(self.atomic_op)
         return rules
     
     def init_context(self):
@@ -132,11 +129,9 @@ class rule_parser:
     def match(self,doc):
         self.atomic_res = self.get_atomic_res(doc)
         res = {}
-        print(self.atomic_res)
         for rule in self.rules:
             res[rule] = self.calculate(rule,doc)
-        print(res)
-
+        return res
     def calculate(self,rule,doc):
         res_list = []
         op_list = ['(']
@@ -184,4 +179,4 @@ class rule_parser:
 
 if __name__ == '__main__':
     sports_rule = rule_parser('./sports_college/concept.txt','./sports_college/rule.txt')
-    sports_rule.match('Jame  is a boy and study at junier high school, boy')
+    print(sports_rule.match('Jame  is a boy and study at junier high school, boy'))
