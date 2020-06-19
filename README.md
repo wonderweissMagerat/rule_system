@@ -12,10 +12,13 @@
         you need write concepts like c_<concept name> : [concept1] ,[concept2],... in concept.txt
         
 ### 2.operators:
+    
     1. IN_<concept>_<num> : 
     e.g.  IN_c_woman_3 means weather the document has at least three keywords in c_woman concept,return true or false
+    
     2. AND : e.g.
     IN_c_woman_3 AND IN_c_girl_1 means document has at least three keywords in c_woman and has at least one girl word
+    
     3. OR : 
     used like "or" in python
     
@@ -27,9 +30,11 @@
     you can write rules like Expressions with "()" in rule.txt
 
 # USAGE:
-    make dir like sports_example
-    write rules in rule.txt and concept in concept.txt
-    python parse_rule_file or write you own parser in main.py
+    1. make dir like example of sports_college
+    
+    2. write rules in rule.txt and concept in concept.txt
+    
+    3. python parse_rule_file or write you own parser in main.py
 
 
     
